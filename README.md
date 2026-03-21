@@ -11,9 +11,15 @@ Zero-Client Crypto Front-end and Server package (no charge, for development purp
 Copy zccserv, in BINARY mode, to a zFS directory on z/OS.
 
 Mark it as executable:
+
+```
 $ chmod +x zccserv
+```
 
 Start it up, specifying a suitable port number to listen on:
+
+```
 $ ./zccserv 4104
+```
 
 Note that Ctrl-C will terminate zccserv.
