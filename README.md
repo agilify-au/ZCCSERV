@@ -5,6 +5,15 @@ Zero-Client Crypto Front-end and Server package (no charge, for development purp
 
 **zcclient.py** is a Python command-line utility for calling CCA verbs.  zccgui.py constructs the zcclient command needed to replicate what you are doing in zccgui.
 
-**zccserv** is the z/OS UNIX _backend_ utility that executes verbs against the local ICSF for the LPAR where zccserv is running.  zccgui.py and zcclient.py communicate over a TCP socket (optionally using TLS 1.2 or 1.3).
+**zccserv** is the z/OS UNIX _backend_ utility that executes CCA verbs against the local ICSF instance in the LPAR where zccserv is running.  zccgui and zcclient communicate over a TCP socket (optionally using TLS 1.2 or 1.3).
 
+## Installation
+Copy zccserv, in BINARY mode, to a zFS directory on z/OS.
 
+Mark it as executable:
+$ chmod +x zccserv
+
+Start it up, specifying a suitable port number to listen on:
+$ ./zccserv 4104
+
+Note that Ctrl-C will terminate zccserv.
