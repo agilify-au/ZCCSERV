@@ -22,4 +22,23 @@ Start zccserv, specifying a suitable port number to listen on:
 ./zccserv 4104
 ```
 
+If zccserv is able to start successfully, you will see a message like the following:
+
+```
+Listening on port 4104
+```
+
 Note that Ctrl-C will terminate zccserv.
+
+Download zccgui.py and zcclient.py to the same directory on your Windows, Linux or Mac OS workstation.  If necessary, install Python 3.11 or later (including _tkinter_, which is a standard Python package, but may need to be explicitly installed on Linux).  Use pip to install the _pillow_ Python package (optional).
+
+##Running zccgui
+
+_zccgui_ will accept hostname/IP and port number as command-line arguments, or you can type these values into the input fields on the top banner of the GUI.  Invoke _zccgui_ as follows:
+
+```
+python3 zccgui.py [host port]
+```
+
+
+
