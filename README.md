@@ -3,9 +3,9 @@ Zero-Client Crypto Front-end and Server package (no charge, for development purp
 
 **zccgui.py** is a Python GUI which makes calling IBM CCA cryptographic verbs very easy.
 
-**zcclient.py** is a Python command-line utility for calling CCA verbs.  zccgui.py constructs the zcclient command needed to replicate what you are doing in zccgui.
+**zcclient.py** is a Python command-line utility for calling CCA verbs.  _zccgui_ constructs the _zcclient_ command needed to replicate what you are doing in _zccgui_.
 
-**zccserv** is the z/OS UNIX _backend_ utility that executes CCA verbs against the local ICSF instance in the LPAR where zccserv is running.  zccgui and zcclient communicate over a TCP socket (optionally using TLS 1.2 or 1.3).
+**zccserv** is the z/OS UNIX _backend_ utility that executes CCA verbs against the local ICSF instance in the LPAR where zccserv is running.  _zccgui_ and _zcclient_ communicate over a TCP socket (optionally using TLS 1.2 or 1.3).
 
 ## Installation
 Copy zccserv, in BINARY mode, to a zFS directory on z/OS.
