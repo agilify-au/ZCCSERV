@@ -40,5 +40,34 @@ _zccgui_ will accept hostname/IP and port number as command-line arguments, or y
 python3 zccgui.py [host port]
 ```
 
+## Security
 
+A user of the _zccgui_ or _zcclient_ will inherit the permissions of the user running _zccserv_ under z/OS, so make sure this z/OS user has _appropriate_ permissions to profiles in the CSFSERV, CSFKEYS and CRYPTOZ classes.
 
+If you want the communications from _zccgui_ and _zcclient_ to be secure, you will need to create an AT-TLS policy for this purpose.  Here is an example of such a policy, where _zccserv_ runs under user, ZCCSERV, for which a server certificate has been created.  This certificate is the DEFAULT certificate in keyring ZCCSERV/ZCCRing:
+
+```
+TTLSRule ZCC
+{
+  LocalPortRange                  4102
+  Direction                       Inbound
+  TTLSGroupActionRef              ZCC_GA
+  TTLSEnvironmentActionRef        ZCC_EA
+}
+TTLSGroupAction                   ZCC_GA
+{
+  TTLSEnabled                     On
+}
+TTLSEnvironmentAction             ZCC_EA
+{
+  HandshakeRole                   Server
+  TTLSKeyringParms
+  {
+    Keyring                       ZCCSERV/ZCCRing
+  }
+  TTLSEnvironmentAdvancedParms
+  {
+    TLSv1.3                       On
+  }
+}
+```
