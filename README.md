@@ -65,6 +65,12 @@ TTLSEnvironmentAction             ZCC_EA
   {
     Keyring                       ZCCSERV/ZCCRing
   }
+  TTLSCipherParms
+  {
+    V3CipherSuites               TLS_AES_128_GCM_SHA256
+    V3CipherSuites               TLS_AES_256_GCM_SHA384
+    V3CipherSuites               TLS_CHACHA20_POLY1305_SHA256
+  }
   TTLSEnvironmentAdvancedParms
   {
     TLSv1.3                       On
